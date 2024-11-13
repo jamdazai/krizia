@@ -8,24 +8,29 @@ import Question from "./pages/Question.tsx";
 import Date from "./pages/Date.tsx";
 import Thankyou from "./pages/Thankyou.tsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/date",
+      element: <Question />,
+    },
+    {
+      path: "/choose",
+      element: <Date />,
+    },
+    {
+      path: "/thankyou",
+      element: <Thankyou />,
+    },
+  ],
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/date",
-    element: <Question />,
-  },
-  {
-    path: "/choose",
-    element: <Date />,
-  },
-  {
-    path: "/thankyou",
-    element: <Thankyou />,
-  },
-]);
+    basename: "/krizia",
+  }
+);
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
